@@ -35,6 +35,7 @@ function createTab(url = 'https://www.google.com') {
   const id = nextId++;
   const view = new WebContentsView({ webPreferences: { partition: 'persist:liqra', sandbox: true } });
   const tab = { id, view, url, title: 'Загрузка…', loading: true };
+  win.contentView.addChildView(view);
   tabs.push(tab);
   view.webContents.setWindowOpenHandler(({ url }) => { createTab(url); return { action: 'deny' }; });
   view.webContents.on('page-title-updated', (e, title) => { tab.title = title; publishTabs(); });

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:;">
+  <title>LIQRA Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="chrome">
+    <div class="tabbar">
+      <div class="brand"><span class="brand-mark">L</span><span>LIQRA</span></div>
+      <div id="tabs" class="tabs"></div>
+      <button id="newTab" class="new-tab" title="Новая вкладка">＋</button>
+      <div class="window-space"></div>
+    </div>
+    <div class="toolbar">
+      <div class="nav-buttons">
+        <button id="back" class="tool" title="Назад">‹</button>
+        <button id="forward" class="tool" title="Вперёд">›</button>
+        <button id="reload" class="tool" title="Обновить">↻</button>
+        <button id="home" class="tool" title="Домой">⌂</button>
+      </div>
+      <form id="addressForm" class="address-wrap">
+        <span class="lock">◈</span>
+        <input id="address" autocomplete="off" spellcheck="false" placeholder="Введите адрес или поисковый запрос">
+        <button class="go" type="submit" title="Перейти">↵</button>
+      </form>
+      <button id="theme" class="tool theme" title="Сменить тему">☼</button>
+    </div>
+  </header>
+  <div id="toast" role="status"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "liqra-browser",
+  "version": "1.0.0",
+  "description": "LIQRA Browser — a clean, glass-inspired desktop web browser.",
+  "main": "main.js",
+  "author": "LIQRA",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.2.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.liqra.browser",
+    "productName": "LIQRA Browser",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css", "package.json"],
+    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }], "artifactName": "LIQRA-Browser-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}
